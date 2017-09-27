@@ -1,3 +1,4 @@
+
 package derrickvaradventure;
 //Derrick Var period 4
 	
@@ -25,98 +26,96 @@ package derrickvaradventure;
 				NorthKorea(g);
 			} else if (screen == 2) {
 				Hawaii(g);
-			
 			}
-			if (screen == 2) {
-				startingScreen(g);
+			if (screen == 1) { 
+				NorthKorea(g) ;
 			} else if (screen == 3) {
-				LiberatethePeople(g);
+				LiberateThePeople(g);
 			} else if (screen == 4) {
 				TakeatourofNorthKorea(g);
-				
-				if (screen == 3) {
-					startingScreen(g);
-				} else if (screen == 4 ) {
-					Youtrytoconvincethemthatyoureheretohelp(g);
-				} else if (screen == 5) {
-					Youaskifitsbecauseyouareofadifferentskincolor(g);
-					 
-			
-				}
 			}
-				
+			if (screen == 3) {
+				LiberateThePeople(g);
+			}else if (screen == 5) {
+				Youtrytoconvinvethemyouareheretohelp(g);
 			
-				
-		}
-		
-	
-				public void Youaskifitsbecauseyouareofadifferentskincolor(Graphics g) {
-			// TODO Auto-generated method stub
+			}
 			
 		}
-
-				public void Youtrytoconvincethemthatyoureheretohelp(Graphics g) {
-			// TODO Auto-generated method stub
 			
-		}
-
-				public void LiberatethePeople(Graphics g) {
-			// TODO Auto-generated method stub
-			
-		}
-
-				public void TakeatourofNorthKorea(Graphics g) {
-			// TODO Auto-generated method stub
-			
-		}
-
-				public void startingScreen(Graphics g) {
-			
+		//screen 0
+			public void startingScreen(Graphics g) {
 			g.setColor(Color.CYAN);
 			g.drawString("Where would you like to go?", 10, 30);
 			g.drawString("North Korea", 10, 100);
 			g.drawString("Hawaii" , 200, 100);
 			}
-		
-	public void NorthKorea (Graphics g) {
-		g.setColor(Color.CYAN);
-		g.drawString("You are in North Korea, Best Korea... You can now either take a tour Or Liberate the people ", 10, 30);
-		g.drawString("Liberate the People", 10, 100);
-		g.drawString("Take a tour of North Korea" , 200, 100);
+		//screen 1
+			public void NorthKorea (Graphics g) {
+			g.setColor(Color.CYAN);
+			g.drawString("You are in North Korea... You can now either take a tour Or Liberate the people ", 10, 30);
+			g.drawString("Liberate the People", 10, 100);
+			g.drawString("Take a tour of North Korea" , 200, 100);
 	
 	}
-	public void LiberateThePeople (Graphics g) {
-		g.drawString ("You find that all of the families do not trust you, although you are trying to help..", 10, 30);
-		g.drawString("You try to convince them that you're here to help", 10, 100); 
-		g.drawString("You ask if it's because you are of a different skin color", 200, 100);		
-	}
-	
-	
-	public void Hawaii (Graphics g) {
-		g.setColor(Color.CYAN);
-		g.drawString("You are in Hawaii", 10, 30);
+			//screen 2
+			public void Hawaii (Graphics g) {
+				g.setColor(Color.CYAN);
+			g.setColor(Color.CYAN);
+		    g.drawString("You are in Hawaii, and the first thing you would like to do is...", 10, 30);
 		
 	}
+			//screen 3
+			public void LiberateThePeople (Graphics g) {
+				g.setColor(Color.CYAN);
+				g.drawString ("You find that all of the families do not trust you, although you are trying to help..", 10, 30);
+			g.drawString("You try to convince them that you are here to help", 10, 100); 
+			g.drawString("You ask if it's because you are of a different skin color", 300, 100);		
+	}
+			//screen 4
+			public void TakeatourofNorthKorea (Graphics g) {
+				g.setColor(Color.CYAN);
+				g.drawString("You visit the many 'attractions' made for tourists ", 10, 20);
+	}
+			//screen 5
+			public void Youtrytoconvinvethemyouareheretohelp (Graphics g ) {
+				g.setColor(Color.CYAN);
+				g.drawString("You tell them everything and...", 10, 30);
+			g.drawString(" the truth enlightens them", 10, 100);
+	}	
+			
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			System.out.println(e.getX() + " " + e.getY());
-			if (e.getX() > 10 && e.getX() < 100 && e.getY() > 90 && e.getY() < 110 && (screen == 0)) { 
-				screen = 1;
-			}
-			if (e.getX() > 200 && e.getX() < 3000 && e.getY() > 90 && e.getY() < 110) {
-				screen = 2;
-			}
-			if (e.getX() > 200 && e.getX() < 3000 && e.getY() > 90 && e.getY() < 110) {
-				screen = 3;
-			}
-			repaint(); 
-			}               
+			if (screen == 0){
+				if (e.getX() > 10 && e.getX() < 100 && e.getY() > 90 && e.getY() < 100 ){ 
+					screen = 1;
+				}
+				if (e.getX() > 200 && e.getX() < 300 && e.getY() > 90 && e.getY() < 110) {
+					screen = 2;
+					}
+				repaint();
+				}
 			
-	
-	
-		
-	
-		
+			if (screen == 1 ) {
+					if (e.getX() > 10 && e.getX() < 114 && e.getY() > 90 && e.getY() < 100 ) { 
+						screen = 3;
+					}
+					if  (e.getX() > 199 && e.getX() < 345 && e.getY() > 90 && e.getY() < 100) {
+						screen = 4;
+					}
+					repaint();
+			}
+			if (screen == 3) {
+				if (e.getX() > 10 && e.getX() < 114 && e.getY() > 90 && e.getY() < 100 ) { 
+					screen = 5;
+				}
+			
+						repaint();
+				}
+			
+			}
+
 
 		@Override
 		public void mousePressed(MouseEvent e) {
