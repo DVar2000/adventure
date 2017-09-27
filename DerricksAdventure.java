@@ -27,17 +27,39 @@ package derrickvaradventure;
 				Hawaii(g);
 			
 			}
-			if (screen == 1) {
+			if (screen == 2) {
 				startingScreen(g);
 			} else if (screen == 3) {
 				LiberatethePeople(g);
 			} else if (screen == 4) {
 				TakeatourofNorthKorea(g);
 				
-		}
+				if (screen == 3) {
+					startingScreen(g);
+				} else if (screen == 4 ) {
+					Youtrytoconvincethemthatyoureheretohelp(g);
+				} else if (screen == 5) {
+					Youaskifitsbecauseyouareofadifferentskincolor(g);
+					 
+			
+				}
+			}
+				
+			
+				
 		}
 		
 	
+				public void Youaskifitsbecauseyouareofadifferentskincolor(Graphics g) {
+			// TODO Auto-generated method stub
+			
+		}
+
+				public void Youtrytoconvincethemthatyoureheretohelp(Graphics g) {
+			// TODO Auto-generated method stub
+			
+		}
+
 				public void LiberatethePeople(Graphics g) {
 			// TODO Auto-generated method stub
 			
@@ -66,7 +88,7 @@ package derrickvaradventure;
 	public void LiberateThePeople (Graphics g) {
 		g.drawString ("You find that all of the families do not trust you, although you are trying to help..", 10, 30);
 		g.drawString("You try to convince them that you're here to help", 10, 100); 
-		g.drawString("You ask if it's because you're are of a different skin color", 200, 100);		
+		g.drawString("You ask if it's because you are of a different skin color", 200, 100);		
 	}
 	
 	
@@ -78,17 +100,22 @@ package derrickvaradventure;
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			System.out.println(e.getX() + " " + e.getY());
-			if (screen == 0) {
-			if (e.getX() > 10 && e.getX() < 100 && e.getY() > 90 && e.getY() < 110) {
+			if (e.getX() > 10 && e.getX() < 100 && e.getY() > 90 && e.getY() < 110 && (screen == 0)) { 
 				screen = 1;
 			}
 			if (e.getX() > 200 && e.getX() < 3000 && e.getY() > 90 && e.getY() < 110) {
 				screen = 2;
 			}
-			repaint();
+			if (e.getX() > 200 && e.getX() < 3000 && e.getY() > 90 && e.getY() < 110) {
+				screen = 3;
 			}
+			repaint(); 
+			}               
+			
+	
+	
 		
-		}
+	
 		
 
 		@Override
